@@ -1,6 +1,10 @@
 # web-python-prompt
 
+<<<<<<< HEAD
 Uses Skulpt to run Python code in an interactive online shell.
+=======
+Uses [Skulpt](http://skulpt.org/) to run Python code in an interactive online shell.
+>>>>>>> e7dff328cb69ed8497b48e14e6b74a1f4d0fb707
 
 Demo: running `testmain.html`
 
