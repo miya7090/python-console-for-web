@@ -13,6 +13,8 @@
 import time
 
 # insert code here ----------------------------------------------------------------
+for i in range(100):
+    print("\n") # to view text box from bottom first
 
 print("hello! python console launched.")
 for i in range(3):
@@ -37,7 +39,7 @@ print("complete!")
 <div id="hh3"></div>
 <p>console by <a href="https://github.com/miya7090">miya7090</a>. built with <a href="https://skulpt.org/">skulpt</a>+<a href="https://www.javascript.com/">js</a>.</p> 
 <div id="buttonWrap">
-<button type="button" onclick="runit()">Reset</button> 
+<button type="button" onclick="location.reload()">Reset</button> 
 <button type="button">Another</button> 
 <button type="button">And another</button> 
 <button type="button">OK</button> 
@@ -51,6 +53,11 @@ function refocus(){
     var input = document.getElementById('consoleInp');
     input.focus();
     input.select();
+}
+// viewing bottom of output box
+function updateScroll(){
+    var element = document.getElementById("output");
+    element.scrollTop = element.scrollHeight;
 }
 // [SK code] output functions are configurable; appends some text to a pre element.
 function outf(text) { 
@@ -82,11 +89,15 @@ function runit() {
                     resolve($("#consoleInp").val());
                     // clear the text box!
                     document.getElementById("consoleInp").value = "";
+                    updateScroll();
                 }
             })
         })
     },
-    output: outf,
+    output: function (oText) {
+        outf(oText);
+        updateScroll();
+    },
     read: builtinRead,
     __future__: Sk.python3
     });

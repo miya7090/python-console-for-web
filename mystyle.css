@@ -2,6 +2,7 @@ body {
   background-color: rgb(25,22,22);
   font-size: 14px;
   font-family: Consolas, monospace;
+  overflow-x: hidden;
 }
 
 textarea {
@@ -38,6 +39,14 @@ button {
     position: absolute;
     bottom: calc(25% + 40px);
     left: 30px;
+    height: 65%;
+    width: min(100% - 60px, 700px);
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    margin-right: -60px; /* Maximum width of scrollbar */
+    padding-right: 60px;
 }
 
 #consoleInp {

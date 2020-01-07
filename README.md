@@ -1,6 +1,6 @@
 # web-python-prompt
 
-Run your Python code in an interactive online shell.
+Uses Skulpt to run Python code in an interactive online shell.
 
 Demo: running `testmain.html`
 
